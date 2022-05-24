@@ -3,11 +3,7 @@ import matplotlib.pyplot as plt
 # NO other imports are allowed
 
 class Shape:
-    '''
-    DO NOT MODIFY THIS CLASS
-
-    DO NOT ADD ANY NEW METHODS TO THIS CLASS
-    '''
+    
     def __init__(self):
         self.T_s = None
         self.T_r = None
@@ -16,21 +12,21 @@ class Shape:
     
     def translate(self, dx, dy):
         '''
-        Polygon and Circle class should use this function to calculate the translation
+        Polygon and Circle class use this function to calculate the translation
         '''
         self.T_t = np.array([[1, 0, dx], [0, 1, dy], [0, 0, 1]])
  
 
     def scale(self, sx, sy):
         '''
-        Polygon and Circle class should use this function to calculate the scaling
+        Polygon and Circle class use this function to calculate the scaling
         '''
         self.T_s = np.array([[sx, 0, 0], [0, sy, 0], [0, 0, 1]])
  
         
     def rotate(self, deg):
         '''
-        Polygon and Circle class should use this function to calculate the rotation
+        Polygon and Circle class use this function to calculate the rotation
         '''
         rad = deg*(np.pi/180)
         self.T_r = np.array([[np.cos(rad), np.sin(rad), 0],[-np.sin(rad), np.cos(rad),0], [0, 0, 1]])
@@ -38,7 +34,7 @@ class Shape:
         
     def plot(self, x_dim, y_dim):
         '''
-        Polygon and Circle class should use this function while plotting
+        Polygon and Circle class use this function while plotting
         x_dim and y_dim should be such that both the figures are visible inside the plot
         '''
         x_dim, y_dim = 1.2*x_dim, 1.2*y_dim
@@ -53,7 +49,7 @@ class Shape:
 
 class Polygon(Shape):
     '''
-    Object of class Polygon should be created when shape type is 'polygon'
+    Object of class Polygon created when shape type is 'polygon'
     '''
     def __init__(self, A):
         '''
@@ -184,9 +180,7 @@ class Polygon(Shape):
     
         This function should use the parent's class plot method as well
     
-        This function does not take any input
-    
-        This function does not return anything
+       
         '''
         A=self.A
         A=A.T
@@ -232,9 +226,7 @@ class Polygon(Shape):
 
 
 class Circle(Shape):
-    '''
-    Object of class Circle should be created when shape type is 'circle'
-    '''
+   
     
     def __init__(self, x=0, y=0, radius=5):
         Shape.__init__(self)
@@ -349,9 +341,7 @@ class Circle(Shape):
         
 
 if __name__ == "__main__":
-    '''
-    Add menu here as mentioned in the sample output section of the assignment document.
-    '''
+   
     np.set_printoptions(precision=2)
     verbose = int(input("Verbose? 1 to plot, 0 otherwise: "))
     T=int(input("Enter no of test cases: "))
